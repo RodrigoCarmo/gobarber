@@ -21,7 +21,7 @@
 
 -Após a execução das migrations, execute uma requisição como teste na rota "http://localhost:3333/users" utilizando o Insomnia ou outro de sua preferência, enviando os seguintes dados em JSON:
 
-'''
+```
 
 {
 	"name": "João",
@@ -29,7 +29,7 @@
 	"password": "12345678"
 } 
 
-'''
+```
 
 -Se tudo estiver ok você receberá um status200 com o retorno da requisição.
 
