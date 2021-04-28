@@ -32,5 +32,12 @@
 
 -Se tudo estiver ok você receberá um status200 com o retorno da requisição.
 
+**Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Node.js](https://nodejs.org/en/)
+- [TypeScript](https://www.typescriptlang.org/)
+
 
 
