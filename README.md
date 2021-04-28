@@ -1,6 +1,6 @@
 # Instruções👨‍🏫
 
-**Clonar projeto👨‍💻
+### Clonar projeto👨‍💻
 
 -Clone o projeto na sua máquina; 
 -Com o projeto clonado, realize a instalação das dependências de preferência com o "yarn";
