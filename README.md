@@ -1,6 +1,6 @@
 # 👨‍🏫 Instruções
 
-
+<br><br>
 ### 👨‍💻 Clonar projeto
 
 -Clone o projeto na sua máquina; 
