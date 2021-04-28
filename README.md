@@ -1,69 +1,35 @@
-# Recuperação de senha
+# Instruções👨‍🏫
 
-**Requisitos funcionais**
+**Clonar projeto👨‍💻
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
+-Clone o projeto na sua máquina; 
+-Com o projeto clonado, realize a instalação das dependências de preferência com o "yarn";
 
-**Requisitos não funcionais**
+**Configurando ⚙
 
-- Utilizar Mailtrap para testar envios em ambiente de desenvolvimento;
-- Utilizar Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job);
+-Caso deseje executar a API da mesma forma, será necessário a instalação do MongoDB, Redis e PostgresSQL;
+-Após a instalação faça uma cópia dos arquivos <b>.env.example</b> e <b>ormconfig.example.json</b>, removendo o ".example" dos mesmos;
+-Configure o banco de dados conforme o arquivo do ormconfig.json para uma conexão ao banco;
+-Execute as <b>migrations</b>.
 
-**Regras de negócio**
+**Rodando API🗃
 
-- O link enviado por e-mail para resetar senha, deve expirar em 2 horas;
-- O usuário precisa confirmar a nova senha ao resetar a sua senha;
+-Com tudo configurado basta executar o servidor normalmente, caso queira, verifique o "package.json" para utilizar os scripts de execução;
 
-# Atualização do perfil
+**Testando rotas
 
-**Requisitos funcionais**
+-Após a execução das migrations, execute uma requisição como teste na rota "http://localhost:3333/users" utilizando o Insomnia ou outro de sua preferência, enviando os seguintes dados em JSON:
 
-- O usuário deve poder atualizar seu nome, e-mail e senha;
+'''JSON
 
-**Regras de negócio**
+{
+	"name": "João",
+	"email": "joao@example.com",
+	"password": "12345678"
+} 
 
-- O usuário não pode alterar seu e-mail para um já utilizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha o usuário de confirmar a nova senha;
+'''
+-Se tudo estiver ok você receberá um status200 com o retorno da requisição.
 
-# Painel do prestador
 
-**Requisitos funcionais**
 
-- O usuário deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
-
-**Requisitos não funcionais**
-
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo real utilizando Socket.io;
-
-**Regras de negócio**
-
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
-
-# Agendamento de serviços
-
-**Requisitos funcionais**
-
-- O usuário deve poder listar todos os prestadores de serviços cadastrados;
-- O usuário deve poder listar os dias e um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar horários disponíveis em um dia específico de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
-
-**Requisitos não funcionais**
-
-- A listagem de prestadores deve ser armazenada em cache;
-
-**Regras de negócio**
-
-- Cada agendamento deve durar uma hora exatamente;
-- Os agendamentos devem estar disponíveis entre 8h às 18h( Primeiro às 8h, último às 17h);
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
